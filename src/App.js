@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import './darkMode.css';
+import BackgroundTimer from './BackgroundTimer';
 
 function App() {
   // theme state for light/dark mode
@@ -18,6 +19,7 @@ function App() {
   }, [theme]);
 
   return (
+
     <div className={`App ${theme}`}>
       <p>Testing light/dark mode</p>
       <div className='toggleSlot'>
@@ -25,6 +27,9 @@ function App() {
           <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
           <div className='toggleSlider'></div>
         </label>
+      </div>
+      <div>
+        <BackgroundTimer/>
       </div>
     </div>
   );

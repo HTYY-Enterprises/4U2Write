@@ -1,3 +1,4 @@
+import OpeningModal from './OpeningModal';
 import { useState, useEffect } from 'react';
 import './App.css';
 import './darkMode.css';
@@ -19,8 +20,8 @@ function App() {
   }, [theme]);
 
   return (
-
     <div className={`App ${theme}`}>
+      <OpeningModal />
       <p>Testing light/dark mode</p>
       <div className='toggleSlot'>
         <label htmlFor="themeToggle" className='label'>

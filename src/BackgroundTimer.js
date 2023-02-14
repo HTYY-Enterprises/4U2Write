@@ -10,7 +10,6 @@ function BackgroundTimer() {
     const [timer, setTimer] = useState(20)
 
     useEffect(()=>{
-        setUserActivity(false)
         if (userActivity===true){
           // pauses current timeout when user activity is detected
           clearTimeout()
@@ -41,9 +40,10 @@ function BackgroundTimer() {
             setCounter(15)
           })
         }
+        setUserActivity(false)
     }, [counter])
 
-    let handleChange = (event)=>{
+    let handleChange = () =>{
       // update the state of user activity
       setUserActivity(true)
   }

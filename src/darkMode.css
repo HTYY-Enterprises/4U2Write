@@ -39,7 +39,7 @@
   height: 18px;
   width: 18px;
   transform: translateX(0px);
-  transition: transform 1s linear;
+  transition: transform 0.3s linear;
 }
 
 input:checked + .toggleSlider {

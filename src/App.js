@@ -2,7 +2,6 @@ import OpeningModal from './OpeningModal';
 import { useState, useEffect } from 'react';
 import './App.css';
 import './darkMode.css';
-import BackgroundTimer from './BackgroundTimer';
 
 function App() {
   // theme state for light/dark mode
@@ -30,7 +29,6 @@ function App() {
         </label>
       </div>
       <div>
-        <BackgroundTimer/>
       </div>
     </div>
   );

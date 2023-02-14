@@ -2,11 +2,12 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import firebase from "./firebase";
 import {getDatabase, onValue, ref} from "firebase/database"
+import BackgroundTimer from "./BackgroundTimer"
 
 const OpeningModal = () => {
 
     const [prompt, setPrompt] = useState("");
-    const [timer, setTimer] = useState(0);
+    const [timer, setTimer] = useState(600);
 
     useEffect( () => {
 
@@ -95,7 +96,6 @@ const OpeningModal = () => {
             for (let key in data) {
                 promptData.push(data[key])
             }
-            console.log(promptData)
             setPrompt(promptData[Math.floor(Math.random() * promptData.length)]);
         })
         Swal.fire(
@@ -126,8 +126,9 @@ const OpeningModal = () => {
     }
 
     return (
-        <h2>hello!</h2>
-        // <MainWritingForm timer={timer} prompt={prompt} />
+        <>
+            <BackgroundTimer timer={timer} prompt={prompt} />
+        </>
     )
 }
 

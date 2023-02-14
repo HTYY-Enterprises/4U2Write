@@ -1,16 +1,24 @@
 import {useState, useEffect} from 'react';
 import Swal from 'sweetalert2'
 
-function BackgroundTimer() {
+function BackgroundTimer(props) {
     // sets initial value for inactivity timer to 15 seconds
     const [counter, setCounter] = useState(15)
     // sets initial value for user activity to false
     const [userActivity, setUserActivity] = useState(false);
     // sets initial value for main timer
-    const [timer, setTimer] = useState(20)
+    const [timer, setTimer] = useState(props.timer)
+    
+    const placeholder = props.prompt;
+    console.log(props.timer);
+    console.log(placeholder);
+    
+    useEffect(() => {
+      setTimer(props.timer);
+    },[])
 
     useEffect(()=>{
-        if (userActivity===true){
+        if (userActivity===true && props.timer){
           // pauses current timeout when user activity is detected
           clearTimeout()
           // resets background timer to 15 seconds
@@ -35,7 +43,7 @@ function BackgroundTimer() {
             text: `Keep writing - you got this!`,
             icon: 'warning',
             confirmButtonText: `I'm Ready!`
-          }).then((result)=> {
+          }).then(()=> {
             // resets counter after alert is closed
             setCounter(15)
           })

@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import Swal from 'sweetalert2'
+import {Link} from 'react-router-dom'
 
 function BackgroundTimer(props) {
     // sets initial value for inactivity timer to 15 seconds
@@ -8,17 +9,18 @@ function BackgroundTimer(props) {
     const [userActivity, setUserActivity] = useState(false);
     // sets initial value for main timer
     const [timer, setTimer] = useState(props.timer)
-    
-    const placeholder = props.prompt;
-    console.log(props.timer);
-    console.log(placeholder);
+    // sets prompt
+    const [prompt, setPrompt] = useState("")
+    // state variable to capture user input
+    const [userInput, setUserInput] = useState("");
     
     useEffect(() => {
       setTimer(props.timer);
+      setPrompt(props.prompt);
     },[])
 
     useEffect(()=>{
-        if (userActivity===true && props.timer){
+        if (userActivity===true){
           // pauses current timeout when user activity is detected
           clearTimeout()
           // resets background timer to 15 seconds
@@ -51,17 +53,26 @@ function BackgroundTimer(props) {
         setUserActivity(false)
     }, [counter])
 
-    let handleChange = () =>{
-      // update the state of user activity
-      setUserActivity(true)
+  let handleChange = (event) =>{
+    // update the state of user activity
+    setUserActivity(true)
+    setUserInput(event.target.value)
   }
 
   return (
     <div>
       {timer}
       <div>
-        <textarea onChange={handleChange}></textarea>
+        <h2>{prompt}</h2>
+        <h2>Answer:</h2>
+        <textarea
+          onChange={handleChange}
+          value={userInput}
+          rows={4}
+          cols={50}
+        />
       </div>
+
     </div>
   );
 }

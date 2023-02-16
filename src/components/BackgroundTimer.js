@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import Swal from 'sweetalert2'
-import {Link} from 'react-router-dom'
 
 function BackgroundTimer(props) {
     // sets initial value for inactivity timer to 15 seconds
@@ -17,7 +16,7 @@ function BackgroundTimer(props) {
     useEffect(() => {
       setTimer(props.timer);
       setPrompt(props.prompt);
-    },[])
+    },[props.prompt, props.timer])
 
     useEffect(()=>{
         if (userActivity===true){
@@ -51,7 +50,7 @@ function BackgroundTimer(props) {
           })
         }
         setUserActivity(false)
-    }, [counter])
+    }, [counter, timer, userActivity])
 
   let handleChange = (event) =>{
     // update the state of user activity

@@ -2,12 +2,13 @@
 import { useState, useEffect, Fragment } from 'react';
 import './App.css';
 import {Link, Routes, Route} from "react-router-dom"
-import BackgroundTimer from './components/BackgroundTimer';
+import MainPage from './components/MainPage';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, get} from "firebase/database"
 import Header from './components/Header';
 import Instructions from './components/Instructions';
+import Footer from './components/Footer';
 
 function App() {
   // theme state for light/dark mode
@@ -176,8 +177,9 @@ function App() {
             <Instructions />
           </Link>}
         />
-        <Route path="/main" element={<BackgroundTimer timer={timer} prompt={prompt}/>}/>
-      </Routes> 
+        <Route path="/main" element={<MainPage timer={timer} prompt={prompt}/>}/>
+      </Routes>
+      
       <Link to={"/"}>
         <button className='reset' onClick={handleReset}>Restart</button>
       </Link>
@@ -190,6 +192,7 @@ function App() {
           </label>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

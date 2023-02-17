@@ -135,3 +135,31 @@ textarea + .dark {
   background-color: #6D7C97;
 } */
 
+/*Footer*/
+footer{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footerTitle{
+  flex-basis: 100%;
+  letter-spacing: 0.25rem;
+}
+
+.footerContent{
+  text-align: left;
+  letter-spacing: 0.1rem;
+  flex-basis: 30%;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}

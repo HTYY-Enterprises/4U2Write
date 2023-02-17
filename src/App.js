@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, get} from "firebase/database"
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   // theme state for light/dark mode
@@ -185,6 +186,7 @@ function App() {
         />
         <Route path="/main" element={<BackgroundTimer timer={timer} prompt={prompt}/>}/>
       </Routes>
+
       <Link to={"/"}>
         <button className='reset' onClick={handleReset}>Reset?</button>
       </Link>
@@ -197,6 +199,7 @@ function App() {
           </label>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

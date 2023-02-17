@@ -49,8 +49,11 @@ function BackgroundTimer(props) {
             setCounter(15)
           })
         }
+        console.log(counter)
+        console.log(timer)
+        console.log(userActivity)
         setUserActivity(false)
-    }, [counter, timer, userActivity])
+    }, [counter])
 
   let handleChange = (event) =>{
     // update the state of user activity

@@ -1,5 +1,5 @@
 // import OpeningModal from './OpeningModal';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import './App.css';
 import {Link, Routes, Route} from "react-router-dom"
 import MainPage from './components/MainPage';
@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, get} from "firebase/database"
 import Header from './components/Header';
+import Instructions from './components/Instructions';
 import Footer from './components/Footer';
 
 function App() {
@@ -168,27 +169,19 @@ function App() {
     <div className={`App ${theme}`}>
 
       <Header />
-      <div className='toggleSlot'>
-        <label htmlFor="themeToggle" className='label'>
-          <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
-          <div className='toggleSlider'></div>
-        </label>
-      </div>
-      <Link to={"/"}>
-        <button onClick={handleReset}>Reset?</button>
-      </Link>
-
+      
       <Routes>
         <Route path="/" element={
           <Link to={"/main"}>
             <button className='start'>Ready to Rock!</button>
+            <Instructions />
           </Link>}
         />
         <Route path="/main" element={<MainPage timer={timer} prompt={prompt}/>}/>
       </Routes>
-
+      
       <Link to={"/"}>
-        <button className='reset' onClick={handleReset}>Reset?</button>
+        <button className='reset' onClick={handleReset}>Restart</button>
       </Link>
       <div className='toggleContainer'>
         <p>light/dark mode</p>

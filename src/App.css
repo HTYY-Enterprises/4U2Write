@@ -16,6 +16,11 @@ h1 {
   color: #23395B;
 }
 
+.dark textarea {
+  background-color: #6D7C97;
+  color: #EAE5E9;
+}
+
 /* Toggle switch styling */
 .label {
   position: absolute;
@@ -94,7 +99,7 @@ div.App {
   padding: 25px;
   font-size: 3rem;
   border-radius: 20px;
-  margin: 20px;
+  margin: 20px auto;
   box-shadow: 5px 4px 1px #23395B;
 }
 
@@ -107,33 +112,44 @@ div.App {
   box-shadow: 1px 4px 10px #23395B;
 }
 
-/* button.start + .dark {
-  box-shadow: 10px 4px 1px #EAE5E9 !important;
-} */
+.instructions {
+  text-align: center;
+}
 
 /* Main writing page styling */
 div.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Lato', sans-serif;
 }
 
 textarea {
   margin-bottom: 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem;
 }
 
 .timer {
   text-align: center;
 }
 
-/* textarea + div.light {
-  margin-bottom: 30px;
-  background-color: white;
+h2.promptLabel {
+  margin-bottom: 0;
+  border-bottom: 2.5px solid #78CAD2;
+  font-weight: 900;
 }
 
-textarea + .dark {
-  background-color: #6D7C97;
-} */
+a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #23395B;
+}
+
+
+
 
 /*Footer*/
 footer{

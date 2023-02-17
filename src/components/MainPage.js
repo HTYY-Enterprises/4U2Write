@@ -35,12 +35,12 @@ function MainPage(props) {
             confirmButtonText: `Confirm`
           })
         } else if (counter > 0){
+          // convert timer from s to mm:ss
+          convertTime(timer)
           // background timer: counts down by 1 second
           setTimeout(() => setCounter(counter - 1), 1000)
           // main timer: counts down by 1 second
           setTimeout(() => setTimer(timer - 1), 1000)
-          // convert timer from s to mm:ss
-          convertTime(timer)
         } else {
           // test alert for when counter reaches 0
           Swal.fire({
@@ -73,7 +73,7 @@ function MainPage(props) {
 
 
   return (
-    <div>
+    <div >
       <h2 className='timer'>Time's ticking! {convertedTime}</h2>
       <div className='main'>
         <h2 className='promptLabel'>Prompt:</h2>
@@ -82,7 +82,7 @@ function MainPage(props) {
         <textarea className=''
           onChange={handleChange}
           value={userInput}
-          rows={25}
+          rows={10}
           cols={90}
           placeholder="Start typing..."
         />

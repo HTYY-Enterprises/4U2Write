@@ -16,6 +16,11 @@ h1 {
   color: #23395B;
 }
 
+.dark textarea {
+  background-color: #6D7C97;
+  color: #EAE5E9;
+}
+
 /* Toggle switch styling */
 .label {
   position: absolute;
@@ -112,10 +117,13 @@ div.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Lato', sans-serif;
 }
 
 textarea {
   margin-bottom: 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem;
 }
 
 .timer {

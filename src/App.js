@@ -6,6 +6,7 @@ import BackgroundTimer from './components/BackgroundTimer';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, get} from "firebase/database"
+import Header from './components/Header';
 
 function App() {
   // theme state for light/dark mode
@@ -164,6 +165,7 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
+      <Header />
       <div className='toggleSlot'>
         <label htmlFor="themeToggle" className='label'>
           <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>

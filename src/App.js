@@ -5,7 +5,7 @@ import {Link, Routes, Route} from "react-router-dom"
 import BackgroundTimer from './components/BackgroundTimer';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
-import {push, getDatabase, ref, onValue} from "firebase/database"
+import {push, getDatabase, ref} from "firebase/database"
 
 function App() {
   // theme state for light/dark mode
@@ -102,7 +102,6 @@ function App() {
     setTimer(0);
     setResetWatch(!resetWatch)
   };
-  
 
   useEffect( () => {
     

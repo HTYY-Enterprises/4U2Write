@@ -1,7 +1,6 @@
 /* HEADER */
 header {
   border-bottom: 2px solid #23395B;
-  height: 15vh;
   height: 10vh;
   padding-top: 3%;
 }
@@ -215,13 +214,6 @@ ul{
 li {
   margin-right: 1rem;
 }
-
-/* li::before {
-  content: "•";
-  display: inline-block;
-  width: 1rem;
-  margin-left: 1rem
-} */
 
 a{
   text-decoration: none;

@@ -1,8 +1,15 @@
 /* HEADER */
+header {
+  border-bottom: 2px solid #23395B;
+  height: 15vh;
+  /* padding-top: 4%; */
+}
 
 h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  margin: 0;
 }
 
 /* Light vs Dark mode styling */
@@ -19,6 +26,22 @@ h1 {
 .dark textarea {
   background-color: #6D7C97;
   color: #EAE5E9;
+}
+
+.dark ul {
+  color: #EAE5E9;
+}
+
+.dark a {
+  color: #EAE5E9;
+}
+
+.dark footer {
+  border-top: 2px solid #EAE5E9;
+}
+
+.dark header {
+  border-bottom: 2px solid #EAE5E9;
 }
 
 /* Toggle switch styling */
@@ -84,20 +107,19 @@ input:checked + .toggleSlider {
 }
 
 /* Starting page stying */
-div.App {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  height: 70vh;
 }
 
 .start {
   background-color: #78CAD2;
   color: #23395B;
   padding: 25px;
-  font-size: 3rem;
+  font-size: 2rem;
   border-radius: 20px;
   margin: 20px auto;
   box-shadow: 5px 4px 1px #23395B;
@@ -128,6 +150,9 @@ textarea {
   margin-bottom: 30px;
   font-family: 'Lato', sans-serif;
   font-size: 1.25rem;
+  width: 90%;
+  max-height: 50%;
+  resize: none;
 }
 
 .timer {
@@ -141,15 +166,9 @@ h2.promptLabel {
 }
 
 a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-decoration: none;
   color: #23395B;
 }
-
-
-
 
 /*Footer*/
 footer{
@@ -157,6 +176,10 @@ footer{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border-top: 2px solid #23395B;
+  height: 15vh;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 .footerTitle{
@@ -164,18 +187,37 @@ footer{
   letter-spacing: 0.25rem;
 }
 
+.footerTitle a {
+  display: inline;
+}
+
 .footerContent{
-  text-align: left;
+  text-align: center;
   letter-spacing: 0.1rem;
-  flex-basis: 30%;
 }
 
 ul{
-  list-style-type: none;
+  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
 
+li {
+  margin-right: 1rem;
+}
+
+/* li::before {
+  content: "•";
+  display: inline-block;
+  width: 1rem;
+  margin-left: 1rem
+} */
+
 a{
   text-decoration: none;
+}
+
+h3 {
+  margin-top: 0;
 }

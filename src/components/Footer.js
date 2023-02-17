@@ -4,7 +4,7 @@ const Footer = () =>{
     return (
         <footer>
             <div className = "footerTitle">
-                <h2>CREATED AT JUNO COLLEGE</h2>
+                <h2>CREATED AT <a href="http://junocollege.com" target="_blank">JUNO COLLEGE</a></h2>
             </div>
             
             <div className = "footerContent">

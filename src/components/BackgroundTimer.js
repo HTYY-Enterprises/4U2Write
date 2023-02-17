@@ -49,8 +49,11 @@ function BackgroundTimer(props) {
             setCounter(15)
           })
         }
+        console.log(counter)
+        console.log(timer)
+        console.log(userActivity)
         setUserActivity(false)
-    }, [counter, timer, userActivity])
+    }, [counter])
 
   let handleChange = (event) =>{
     // update the state of user activity
@@ -60,8 +63,8 @@ function BackgroundTimer(props) {
 
   return (
     <div>
-      {timer}
-      <div>
+      <h2 className='timer'>Time's ticking! {timer}</h2>
+      <div className='main'>
         <h2>{prompt}</h2>
         <h2>Answer:</h2>
         <textarea

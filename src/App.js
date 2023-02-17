@@ -5,7 +5,8 @@ import {Link, Routes, Route} from "react-router-dom"
 import BackgroundTimer from './components/BackgroundTimer';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
-import {push, getDatabase, ref, onValue} from "firebase/database"
+import {push, getDatabase, ref, get} from "firebase/database"
+import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
@@ -57,15 +58,21 @@ function App() {
   const getPrompt = (reason) => {
       const database = getDatabase(firebase);
       const dbRef = ref(database);
-      onValue(dbRef, (response) => {
+      get(dbRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
           const promptData = [];
-          const data = response.val();
+          const data = snapshot.val();
           for (let key in data) {
-              promptData.push(data[key])
+            promptData.push(data[key])
           }
           setPrompt(promptData[Math.floor(Math.random() * promptData.length)]);
-          console.log("triggered")
+        }
       })
+      .catch((error) => {
+        console.log(error)
+      })
+
       Swal.fire(
           `${reason}`,
           'A prompt shall be provided for you :)',
@@ -159,6 +166,8 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
+
+      <Header />
       <div className='toggleSlot'>
         <label htmlFor="themeToggle" className='label'>
           <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
@@ -168,20 +177,29 @@ function App() {
       <Link to={"/"}>
         <button onClick={handleReset}>Reset?</button>
       </Link>
+
       <Routes>
         <Route path="/" element={
           <Link to={"/main"}>
-            <button>Ready to Rock!</button>
+            <button className='start'>Ready to Rock!</button>
           </Link>}
         />
         <Route path="/main" element={<BackgroundTimer timer={timer} prompt={prompt}/>}/>
       </Routes>
-      
-      <p>Testing light/dark mode</p>
-      
-      <div>
-        <Footer/>
+
+      <Link to={"/"}>
+        <button className='reset' onClick={handleReset}>Reset?</button>
+      </Link>
+      <div className='toggleContainer'>
+        <p>light/dark mode</p>
+        <div className='toggleSlot'>
+          <label htmlFor="themeToggle" className='label'>
+            <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
+            <div className='toggleSlider'></div>
+          </label>
+        </div>
       </div>
+      <Footer/>
     </div>
   );
 }

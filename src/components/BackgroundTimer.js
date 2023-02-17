@@ -67,8 +67,8 @@ function BackgroundTimer(props) {
         <textarea
           onChange={handleChange}
           value={userInput}
-          rows={4}
-          cols={50}
+          rows={30}
+          cols={100}
         />
       </div>
 

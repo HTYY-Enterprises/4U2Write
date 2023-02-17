@@ -2,7 +2,8 @@
 header {
   border-bottom: 2px solid #23395B;
   height: 15vh;
-  /* padding-top: 4%; */
+  height: 10vh;
+  padding-top: 3%;
 }
 
 h1 {
@@ -107,6 +108,10 @@ input:checked + .toggleSlider {
 }
 
 /* Starting page stying */
+.app {
+position: relative;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -139,6 +144,7 @@ input:checked + .toggleSlider {
 }
 
 /* Main writing page styling */
+
 div.main {
   display: flex;
   flex-direction: column;
@@ -178,8 +184,11 @@ footer{
   flex-wrap: wrap;
   border-top: 2px solid #23395B;
   height: 15vh;
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
 }
 
 .footerTitle{

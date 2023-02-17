@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import {Link, Routes, Route} from "react-router-dom"
-import BackgroundTimer from './components/BackgroundTimer';
+import MainPage from './components/MainPage';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, get} from "firebase/database"
@@ -184,7 +184,7 @@ function App() {
             <button className='start'>Ready to Rock!</button>
           </Link>}
         />
-        <Route path="/main" element={<BackgroundTimer timer={timer} prompt={prompt}/>}/>
+        <Route path="/main" element={<MainPage timer={timer} prompt={prompt}/>}/>
       </Routes>
 
       <Link to={"/"}>

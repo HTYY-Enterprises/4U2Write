@@ -99,7 +99,7 @@ div.App {
   padding: 25px;
   font-size: 3rem;
   border-radius: 20px;
-  margin: 20px;
+  margin: 20px auto;
   box-shadow: 5px 4px 1px #23395B;
 }
 
@@ -110,6 +110,10 @@ div.App {
   font-size: 1.5rem;
   border-radius: 15px;
   box-shadow: 1px 4px 10px #23395B;
+}
+
+.instructions {
+  text-align: center;
 }
 
 /* Main writing page styling */
@@ -129,5 +133,21 @@ textarea {
 .timer {
   text-align: center;
 }
+
+h2.promptLabel {
+  margin-bottom: 0;
+  border-bottom: 2.5px solid #78CAD2;
+  font-weight: 900;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #23395B;
+}
+
+
 
 

@@ -1,5 +1,5 @@
 // import OpeningModal from './OpeningModal';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import './App.css';
 import {Link, Routes, Route} from "react-router-dom"
 import BackgroundTimer from './components/BackgroundTimer';
@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, get} from "firebase/database"
 import Header from './components/Header';
+import Instructions from './components/Instructions';
 
 function App() {
   // theme state for light/dark mode
@@ -172,12 +173,13 @@ function App() {
         <Route path="/" element={
           <Link to={"/main"}>
             <button className='start'>Ready to Rock!</button>
+            <Instructions />
           </Link>}
         />
         <Route path="/main" element={<BackgroundTimer timer={timer} prompt={prompt}/>}/>
-      </Routes>
+      </Routes> 
       <Link to={"/"}>
-        <button className='reset' onClick={handleReset}>Reset?</button>
+        <button className='reset' onClick={handleReset}>Restart</button>
       </Link>
       <div className='toggleContainer'>
         <p>light/dark mode</p>

@@ -65,13 +65,15 @@ function BackgroundTimer(props) {
     <div>
       <h2 className='timer'>Time's ticking! {timer}</h2>
       <div className='main'>
+        <h2 className='promptLabel'>Prompt:</h2>
         <h2>{prompt}</h2>
-        <h2>Answer:</h2>
+        <h2>Write your story below...</h2>
         <textarea className=''
           onChange={handleChange}
           value={userInput}
           rows={25}
           cols={90}
+          placeholder="Start typing..."
         />
       </div>
 

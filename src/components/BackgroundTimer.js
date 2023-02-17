@@ -63,8 +63,8 @@ function BackgroundTimer(props) {
 
   return (
     <div>
-      {timer}
-      <div>
+      <h2 className='timer'>Time's ticking! {timer}</h2>
+      <div className='main'>
         <h2>{prompt}</h2>
         <h2>Answer:</h2>
         <textarea

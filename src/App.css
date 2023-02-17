@@ -107,10 +107,6 @@ div.App {
   box-shadow: 1px 4px 10px #23395B;
 }
 
-/* button.start + .dark {
-  box-shadow: 10px 4px 1px #EAE5E9 !important;
-} */
-
 /* Main writing page styling */
 div.main {
   display: flex;
@@ -126,12 +122,4 @@ textarea {
   text-align: center;
 }
 
-/* textarea + div.light {
-  margin-bottom: 30px;
-  background-color: white;
-}
-
-textarea + .dark {
-  background-color: #6D7C97;
-} */
 

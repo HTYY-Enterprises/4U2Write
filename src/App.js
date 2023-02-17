@@ -167,16 +167,7 @@ function App() {
     <div className={`App ${theme}`}>
 
       <Header />
-      <div className='toggleSlot'>
-        <label htmlFor="themeToggle" className='label'>
-          <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
-          <div className='toggleSlider'></div>
-        </label>
-      </div>
-      <Link to={"/"}>
-        <button onClick={handleReset}>Reset?</button>
-      </Link>
-
+      
       <Routes>
         <Route path="/" element={
           <Link to={"/main"}>

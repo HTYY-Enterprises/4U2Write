@@ -67,7 +67,7 @@ function BackgroundTimer(props) {
       <div className='main'>
         <h2>{prompt}</h2>
         <h2>Answer:</h2>
-        <textarea
+        <textarea className=''
           onChange={handleChange}
           value={userInput}
           rows={30}

@@ -164,26 +164,25 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
-      <div className='toggleSlot'>
-        <label htmlFor="themeToggle" className='label'>
-          <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
-          <div className='toggleSlider'></div>
-        </label>
-      </div>
-      <Link to={"/"}>
-        <button onClick={handleReset}>Reset?</button>
-      </Link>
       <Routes>
         <Route path="/" element={
           <Link to={"/main"}>
-            <button>Ready to Rock!</button>
+            <button className='start'>Ready to Rock!</button>
           </Link>}
         />
         <Route path="/main" element={<BackgroundTimer timer={timer} prompt={prompt}/>}/>
       </Routes>
-      
-      <p>Testing light/dark mode</p>
-      <div>
+      <Link to={"/"}>
+        <button className='reset' onClick={handleReset}>Reset?</button>
+      </Link>
+      <div className='toggleContainer'>
+        <p>light/dark mode</p>
+        <div className='toggleSlot'>
+          <label htmlFor="themeToggle" className='label'>
+            <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
+            <div className='toggleSlider'></div>
+          </label>
+        </div>
       </div>
     </div>
   );

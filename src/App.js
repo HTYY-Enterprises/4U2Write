@@ -5,7 +5,7 @@ import {Link, Routes, Route} from "react-router-dom"
 import BackgroundTimer from './components/BackgroundTimer';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
-import {push, getDatabase, ref, onValue} from "firebase/database"
+import {push, getDatabase, ref, get} from "firebase/database"
 
 function App() {
   // theme state for light/dark mode
@@ -56,15 +56,21 @@ function App() {
   const getPrompt = (reason) => {
       const database = getDatabase(firebase);
       const dbRef = ref(database);
-      onValue(dbRef, (response) => {
+      get(dbRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
           const promptData = [];
-          const data = response.val();
+          const data = snapshot.val();
           for (let key in data) {
-              promptData.push(data[key])
+            promptData.push(data[key])
           }
           setPrompt(promptData[Math.floor(Math.random() * promptData.length)]);
-          console.log("triggered")
+        }
       })
+      .catch((error) => {
+        console.log(error)
+      })
+
       Swal.fire(
           `${reason}`,
           'A prompt shall be provided for you :)',

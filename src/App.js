@@ -6,6 +6,7 @@ import BackgroundTimer from './components/BackgroundTimer';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, onValue} from "firebase/database"
+import Footer from './components/Footer';
 
 function App() {
   // theme state for light/dark mode
@@ -177,7 +178,9 @@ function App() {
       </Routes>
       
       <p>Testing light/dark mode</p>
+      
       <div>
+        <Footer/>
       </div>
     </div>
   );

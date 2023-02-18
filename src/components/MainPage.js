@@ -73,7 +73,7 @@ function MainPage(props) {
 
 
   return (
-    <div >
+    <div>
       <h2 className='timer'>Time's ticking! {convertedTime}</h2>
       <div className='main'>
         <h2 className='promptLabel'>Prompt:</h2>

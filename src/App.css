@@ -1,47 +1,47 @@
 /* HEADER */
 header {
-  border-bottom: 2px solid #23395B;
+  border-bottom: 2px solid #23395b;
   height: 10vh;
   padding-top: 3%;
 }
 
 h1 {
   font-size: 5rem;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   text-align: center;
   margin: 0;
 }
 
 /* Light vs Dark mode styling */
 .dark {
-  background-color: #23395B;
-  color: #EAE5E9;
+  background-color: #23395b;
+  color: #eae5e9;
 }
 
 .light {
-  background-color: #EAE5E9;
-  color: #23395B;
+  background-color: #eae5e9;
+  color: #23395b;
 }
 
 .dark textarea {
-  background-color: #6D7C97;
-  color: #EAE5E9;
+  background-color: #6d7c97;
+  color: #eae5e9;
 }
 
 .dark ul {
-  color: #EAE5E9;
+  color: #eae5e9;
 }
 
 .dark a {
-  color: #EAE5E9;
+  color: #eae5e9;
 }
 
 .dark footer {
-  border-top: 2px solid #EAE5E9;
+  border-top: 2px solid #eae5e9;
 }
 
 .dark header {
-  border-bottom: 2px solid #EAE5E9;
+  border-bottom: 2px solid #eae5e9;
 }
 
 /* Toggle switch styling */
@@ -67,12 +67,12 @@ h1 {
   border-radius: 10em;
 }
 
-.toggleSlider{
+.toggleSlider {
   position: absolute;
   top: -2px;
   left: -2px;
   border: 3px solid black;
-  background-color: #78CAD2;
+  background-color: #78cad2;
   border-radius: 50%;
   height: 18px;
   width: 18px;
@@ -82,33 +82,34 @@ h1 {
 
 input:checked + .toggleSlider {
   transform: translateX(30px);
-  background-color: #78CAD2;
+  background-color: #78cad2;
 }
 
 /* Modal styling */
 .swal2-icon {
-  border-color: #23395B !important;
-  color: #23395B !important;
+  border-color: #23395b !important;
+  color: #23395b !important;
 }
 
 .swal2-popup {
-  color: #23395B !important;
-  background-color: #EAE5E9 !important;
+  color: #23395b !important;
+  background-color: #eae5e9 !important;
 }
 
 .swal2-confirm {
-  color: #23395B !important;
-  background-color: #78CAD2 !important;
+  color: #23395b !important;
+  background-color: #78cad2 !important;
 }
 
 .swal2-cancel {
-  color: #EAE5E9 !important;
-  background-color: #23395B !important;
+  color: #eae5e9 !important;
+  background-color: #23395b !important;
 }
 
 /* Starting page stying */
 .app {
-position: relative;
+  position: relative;
+  display: flex;
 }
 
 .wrapper {
@@ -120,22 +121,22 @@ position: relative;
 }
 
 .start {
-  background-color: #78CAD2;
-  color: #23395B;
+  background-color: #78cad2;
+  color: #23395b;
   padding: 25px;
   font-size: 2rem;
   border-radius: 20px;
   margin: 20px auto;
-  box-shadow: 5px 4px 1px #23395B;
+  box-shadow: 5px 4px 1px #23395b;
 }
 
 .reset {
-  background-color: #78CAD2;
-  color: #23395B;
+  background-color: #78cad2;
+  color: #23395b;
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 15px;
-  box-shadow: 1px 4px 10px #23395B;
+  box-shadow: 1px 4px 10px #23395b;
 }
 
 .instructions {
@@ -145,15 +146,16 @@ position: relative;
 /* Main writing page styling */
 
 div.main {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
-  font-family: 'Lato', sans-serif;
+  align-items: center; */
+  font-family: "Lato", sans-serif;
+  text-align: center;
 }
 
 textarea {
   margin-bottom: 30px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.25rem;
   width: 90%;
   max-height: 50%;
@@ -166,22 +168,23 @@ textarea {
 
 h2.promptLabel {
   margin-bottom: 0;
-  border-bottom: 2.5px solid #78CAD2;
   font-weight: 900;
+  text-decoration-line: underline;
+  /* border-bottom: 2.5px solid #78CAD2; */
 }
 
 a {
   text-decoration: none;
-  color: #23395B;
+  color: #23395b;
 }
 
 /*Footer*/
-footer{
+footer {
   text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border-top: 2px solid #23395B;
+  border-top: 2px solid #23395b;
   height: 15vh;
   width: 100%;
   margin: 0 auto;
@@ -190,7 +193,7 @@ footer{
   bottom: 0;
 }
 
-.footerTitle{
+.footerTitle {
   flex-basis: 100%;
   letter-spacing: 0.25rem;
 }
@@ -199,12 +202,12 @@ footer{
   display: inline;
 }
 
-.footerContent{
+.footerContent {
   text-align: center;
   letter-spacing: 0.1rem;
 }
 
-ul{
+ul {
   list-style: none;
   display: flex;
   margin: 0;
@@ -215,10 +218,52 @@ li {
   margin-right: 1rem;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
 h3 {
   margin-top: 0;
+}
+
+/* Media Queries */
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  .instructions {
+    width: 50%;
+  }
+  .start {
+    padding: 15px;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .footerTitle {
+    font-size: 0.75rem;
+  }
+
+  .footerContent {
+    font-size: 0.75rem;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 3.5rem;
+  }
+  .instructions {
+    width: 100%;
+  }
+
+  .start {
+    font-size: 1.5rem;
+  }
+
+  .reset {
+    font-size: 1rem;
+  }
 }

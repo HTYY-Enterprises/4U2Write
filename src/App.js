@@ -193,7 +193,6 @@ function App() {
         </Link>
         <div className='toggleContainer'>
           <img src={sun} alt="sun" />
-          {/* <p>light/dark mode</p> */}
           <div className='toggleSlot'>
             <label htmlFor="themeToggle" className='label'>
               <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>

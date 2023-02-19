@@ -10,6 +10,7 @@ h1 {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
   margin: 0;
+  text-shadow: 0 0 1rem #78CAD2;
 }
 
 /* Light vs Dark mode styling */
@@ -152,6 +153,7 @@ position: relative;
   font-size: 1.5rem;
   border-radius: 15px;
   box-shadow: 1px 4px 10px #23395B;
+  margin: 20px auto;
 }
 
 .instructions {
@@ -174,6 +176,7 @@ textarea {
   width: 90%;
   max-height: 50%;
   resize: none;
+  box-shadow: 0 0 0.2rem #78CAD2;
 }
 
 .timer {
@@ -209,6 +212,7 @@ footer{
 .footerTitle{
   flex-basis: 100%;
   letter-spacing: 0.25rem;
+  text-shadow: 0 0 1rem #78CAD2;
 }
 
 .footerTitle a {

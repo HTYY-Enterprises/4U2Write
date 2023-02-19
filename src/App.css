@@ -1,7 +1,7 @@
 /* HEADER */
 header {
   border-bottom: 2px solid #23395B;
-  height: 15vh;
+  max-height: 15vh;
   /* padding-top: 4%; */
 }
 
@@ -207,13 +207,6 @@ li {
   margin-right: 1rem;
 }
 
-/* li::before {
-  content: "•";
-  display: inline-block;
-  width: 1rem;
-  margin-left: 1rem
-} */
-
 a{
   text-decoration: none;
 }
@@ -221,3 +214,17 @@ a{
 h3 {
   margin-top: 0;
 }
+
+.sixtySecondWarning{
+  animation: Timer-fade infinite 1s linear;
+}
+
+@keyframes Timer-fade{
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+

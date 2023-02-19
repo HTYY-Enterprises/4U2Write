@@ -45,6 +45,20 @@ h1 {
 }
 
 /* Toggle switch styling */
+.toggleContainer {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  display: flex;
+}
+
+img {
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  filter: drop-shadow(0 0 0.2rem #78CAD2);
+}
+
 .label {
   position: absolute;
   top: 0;
@@ -62,9 +76,10 @@ h1 {
   position: relative;
   height: 20px;
   width: 50px;
-  margin: auto;
+  margin: auto 3px;
   border: 3px solid black;
   border-radius: 10em;
+  filter: drop-shadow(0 0 0.2rem #78CAD2);
 }
 
 .toggleSlider{
@@ -117,6 +132,7 @@ position: relative;
   justify-content: center;
   align-items: center;
   height: 70vh;
+  position: relative;
 }
 
 .start {

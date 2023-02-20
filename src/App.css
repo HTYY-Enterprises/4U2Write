@@ -11,7 +11,6 @@ html { box-sizing: border-box;}
 header {
   border-bottom: 2px solid #23395b;
   height: 10vh;
-  padding-top: 3%;
 }
 
 h1 {
@@ -177,9 +176,6 @@ input:checked + .toggleSlider {
 /* Main writing page styling */
 
 div.main {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   font-family: "Lato", sans-serif;
   text-align: center;
 }
@@ -202,7 +198,6 @@ h2.promptLabel {
   margin-bottom: 0;
   font-weight: 900;
   text-decoration-line: underline;
-  /* border-bottom: 2.5px solid #78CAD2; */
 }
 
 a {
@@ -282,6 +277,15 @@ footer a:hover {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+
+  .start {
+    font-size: 1.5rem;
+  }
+
+  .reset {
+    font-size: 1.25rem;
+  }
+
   .footerTitle {
     font-size: 0.75rem;
   }
@@ -302,7 +306,7 @@ footer a:hover {
   }
 
   .start {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .reset {

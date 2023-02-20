@@ -10,15 +10,15 @@ html { box-sizing: border-box;}
 /* HEADER */
 header {
   border-bottom: 2px solid #23395B;
-  height: 10vh;
-  padding-top: 3%;
+  height: 15vh;
+  /* padding-top: 3%; */
 }
 
 h1 {
   font-size: 5rem;
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
-  margin: 0;
+  margin: 10px auto;
   text-shadow: 0 0 1rem #78CAD2;
 }
 
@@ -146,7 +146,7 @@ position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  min-height: 70vh;
   position: relative;
 }
 
@@ -209,7 +209,7 @@ textarea {
 }
 
 h2.promptLabel {
-  margin-bottom: 0;
+  margin: 0 auto;
   border-bottom: 2.5px solid #78CAD2;
   font-weight: 900;
 }
@@ -240,6 +240,10 @@ footer{
   text-shadow: 0 0 1rem #78CAD2;
 }
 
+.footerTitle h2 {
+  margin: 10px auto;
+}
+
 .footerTitle a {
   display: inline;
 }
@@ -265,7 +269,7 @@ a{
 }
 
 h3 {
-  margin-top: 0;
+  margin: 0 auto 10px auto;
 }
 
 footer a:hover {

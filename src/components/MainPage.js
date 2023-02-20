@@ -1,6 +1,5 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import Swal from 'sweetalert2'
-import {useRef} from 'react';
 import jsPDF from 'jspdf';
 
 function MainPage(props) {
@@ -74,19 +73,27 @@ function MainPage(props) {
     }
 
     // Save as PDF feature
+      // reference for textarea user input
     const userInputRef = useRef(null);
+      // reference for prompt used
+    const userPromptRef = useRef(null);
 
+    // Saving to PDF function
     const handleSavePdf = () => {
       const doc = new jsPDF ({
         format: 'a4',
-        unit: 'px',
+        unit: 'in',
       })
 
-      doc.html(userInputRef.current, {
-        async callback(doc) {
-          await doc.save('document');
-        },
-      });
+      console.log(userInputRef.current);
+      // console.log(userPromptRef.current.innerText);
+
+      const pageHeight = doc.internal.pageSize.height;
+
+      doc.text(userPromptRef.current.innerText, 1, 1, { maxWidth: 6 })
+      doc.text(userInputRef.current.defaultValue, 1, 2, {maxWidth: 6})
+      doc.save('document');
+
     };
 
   return (
@@ -94,7 +101,7 @@ function MainPage(props) {
       <h2 className='timer'>Time's ticking! {convertedTime}</h2>
       <div className='main'>
         <h2 className='promptLabel'>Prompt:</h2>
-        <h2>{prompt}</h2>
+        <h2 ref={userPromptRef}>{prompt}</h2>
         <h2>Write your story below...</h2>
         <textarea className=''
           onChange={handleChange}

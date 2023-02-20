@@ -205,6 +205,20 @@ a {
   color: #23395b;
 }
 
+/* 60 second warning animation */
+.sixtySecondWarning{
+  animation: Timer-fade infinite 1s linear;
+}
+
+@keyframes Timer-fade{
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
 /*Footer*/
 footer {
   text-align: center;
@@ -306,6 +320,10 @@ footer a:hover {
     font-size: 1rem;
   }
 
+  .toggleContainer img {
+    height: 30px;
+  }
+
   textarea {
     font-size: 1rem;
   }
@@ -321,18 +339,9 @@ footer a:hover {
   .reset {
     font-size: 1rem;
   }
-}
 
-.sixtySecondWarning{
-  animation: Timer-fade infinite 1s linear;
-}
-
-@keyframes Timer-fade{
-  from {
-    opacity: 100%;
+  .footerTitle h2 {
+    font-size: 0.75rem;
   }
-  to {
-    opacity: 0%;
-  }
-}
 
+}

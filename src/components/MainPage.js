@@ -74,12 +74,18 @@ function MainPage(props) {
 
   return (
     <div>
-      <h2 className='timer'>Time's ticking! {convertedTime}</h2>
-      <div className='main'>
-        <h2 className='promptLabel'>Prompt:</h2>
+      <h2 className="timer">
+        Time's ticking!{" "}
+        <span className={timer < 60 ? "sixtySecondWarning" : "timerText"}>
+          {convertedTime}
+        </span>
+      </h2>
+      <div className="main">
+        <h2 className="promptLabel">Prompt:</h2>
         <h2>{prompt}</h2>
         <h2>Write your story below...</h2>
-        <textarea className=''
+        <textarea
+          className=""
           onChange={handleChange}
           value={userInput}
           rows={10}
@@ -87,7 +93,6 @@ function MainPage(props) {
           placeholder="Start typing..."
         />
       </div>
-
     </div>
   );
 }

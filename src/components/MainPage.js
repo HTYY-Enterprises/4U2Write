@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react';
 import Swal from 'sweetalert2'
+import {useRef} from 'react';
+import jsPDF from 'jspdf';
 
 function MainPage(props) {
     // sets initial value for inactivity timer to 15 seconds
@@ -71,6 +73,21 @@ function MainPage(props) {
       setConvertedTime(minutes + ":" + seconds);
     }
 
+    // Save as PDF feature
+    const userInputRef = useRef(null);
+
+    const handleSavePdf = () => {
+      const doc = new jsPDF ({
+        format: 'a4',
+        unit: 'px',
+      })
+
+      doc.html(userInputRef.current, {
+        async callback(doc) {
+          await doc.save('document');
+        },
+      });
+    };
 
   return (
     <div >
@@ -85,7 +102,9 @@ function MainPage(props) {
           rows={10}
           cols={90}
           placeholder="Start typing..."
+          ref={userInputRef}
         />
+        <button onClick={handleSavePdf}>Save as PDF</button>
       </div>
 
     </div>

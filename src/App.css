@@ -222,3 +222,17 @@ a{
 h3 {
   margin-top: 0;
 }
+
+.sixtySecondWarning{
+  animation: Timer-fade infinite 1s linear;
+}
+
+@keyframes Timer-fade{
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+

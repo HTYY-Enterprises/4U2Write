@@ -32,7 +32,8 @@ function MainPage(props) {
           Swal.fire({
             title: `Time's up!`,
             icon: 'success',
-            confirmButtonText: `Confirm`
+            confirmButtonText: `Confirm`,
+            allowOutsideClick: false
           })
         } else if (counter > 0){
           // convert timer from s to mm:ss
@@ -47,7 +48,9 @@ function MainPage(props) {
             title: `Don't stop now!`,
             text: `Keep writing - you got this!`,
             icon: 'warning',
-            confirmButtonText: `I'm Ready!`
+            confirmButtonText: `I'm Ready!`,
+            allowOutsideClick: false
+
           }).then(()=> {
             // resets counter after alert is closed
             setCounter(15)
@@ -74,7 +77,7 @@ function MainPage(props) {
 
   return (
     <div >
-      <h2 className='timer'>Time's ticking! {convertedTime}</h2>
+      <h2 className='timer'>Time's ticking! <span className={timer < 60 ? 'sixtySecondWarning':'timerText'}>{convertedTime}</span></h2>
       <div className='main'>
         <h2 className='promptLabel'>Prompt:</h2>
         <h2>{prompt}</h2>

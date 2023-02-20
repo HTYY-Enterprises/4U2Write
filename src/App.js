@@ -54,9 +54,10 @@ function App() {
                   resolve('Please select a value!')
                 }
               })
-          }
+          },
+          allowOutsideClick: false
       }).then((result) => {
-          Swal.fire(`You have selected: ${result.value} minutes!`);
+          Swal.fire(`You have selected: ${result.value} minutes!`)
           setTimer(Number(result.value) * 60);
       })
   }
@@ -94,7 +95,8 @@ function App() {
           inputLabel: 'Of course you can!',
           inputPlaceholder: 'Enter your custom prompt here...',
           inputAttributes: {
-            'aria-label': 'Enter your custom prompt here...'
+            'aria-label': 'Enter your custom prompt here...',
+          allowOutsideClick: false
           },
       }).then((result) => {
           console.log(result);
@@ -135,7 +137,9 @@ function App() {
           showCancelButton: true,
           confirmButtonText: `Definitely!`,
           cancelButtonText: `Nah, I'm good!`,
-          reverseButtons: false
+          reverseButtons: false,
+          allowOutsideClick: false
+          
 
       }).then( (result) => {
           if (result.isConfirmed) {
@@ -154,7 +158,8 @@ function App() {
                   showCancelButton: true,
                   confirmButtonText: `Yes please!`,
                   cancelButtonText: `Can I make my own?`,
-                  reverseButtons: false
+                  reverseButtons: false,
+                  allowOutsideClick: false
               }).then( (result) => {
                   if (result.isConfirmed) {
                       getPrompt("Sounds great!");

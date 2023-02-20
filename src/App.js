@@ -99,9 +99,13 @@ function App() {
           allowOutsideClick: false
           },
       }).then((result) => {
-          setPrompt(result.value)
-          chooseTimer()
-          addPrompt(result.value)
+          if (result.value) {
+            setPrompt(result.value)
+            chooseTimer()
+            addPrompt(result.value)
+          } else {
+            getPrompt("Woops!  You didn't add a prompt!")
+          }
       })  
   }
 

@@ -1,14 +1,19 @@
-// import OpeningModal from './OpeningModal';
+// Modules
 import { useState, useEffect, Fragment } from 'react';
-import './App.css';
 import {Link, Routes, Route} from "react-router-dom"
-import MainPage from './components/MainPage';
 import Swal from 'sweetalert2';
 import firebase from './firebase';
 import {push, getDatabase, ref, get} from "firebase/database"
+// Components
+import MainPage from './components/MainPage';
 import Header from './components/Header';
 import Instructions from './components/Instructions';
 import Footer from './components/Footer';
+// Assets & Styling
+import './App.css';
+import sun from './sun-svgrepo-com.svg';
+import moon from './moon-svgrepo-com.svg';
+
 
 function App() {
   // theme state for light/dark mode
@@ -187,13 +192,14 @@ function App() {
           <button className='reset' onClick={handleReset}>Restart</button>
         </Link>
         <div className='toggleContainer'>
-          <p>light/dark mode</p>
+          <img src={sun} alt="sun" />
           <div className='toggleSlot'>
             <label htmlFor="themeToggle" className='label'>
               <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
               <div className='toggleSlider'></div>
             </label>
           </div>
+          <img src={moon} alt="moon" />
         </div>
       </div>
       <Footer/>

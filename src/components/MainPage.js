@@ -56,9 +56,6 @@ function MainPage(props) {
             setCounter(15)
           })
         }
-        console.log(counter)
-        console.log(timer)
-        console.log(userActivity)
         setUserActivity(false)
     }, [counter])
 

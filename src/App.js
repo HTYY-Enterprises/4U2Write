@@ -1,5 +1,5 @@
 // Modules
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect } from 'react';
 import {Link, Routes, Route} from "react-router-dom"
 import Swal from 'sweetalert2';
 import firebase from './firebase';
@@ -77,7 +77,7 @@ function App() {
         }
       })
       .catch((error) => {
-        console.log(error)
+        Swal.fire(`No prompts available:\n${error}`)
       })
 
       Swal.fire(
@@ -99,7 +99,6 @@ function App() {
           allowOutsideClick: false
           },
       }).then((result) => {
-          console.log(result);
           setPrompt(result.value)
           chooseTimer()
           addPrompt(result.value)
@@ -107,7 +106,6 @@ function App() {
   }
 
   const addPrompt = (newPrompt) => {
-    console.log(newPrompt)
     const database = getDatabase(firebase);
     const dbRef = ref(database);
     push(dbRef, newPrompt);

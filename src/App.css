@@ -9,15 +9,9 @@ html { box-sizing: border-box;}
 
 /* HEADER */
 header {
-<<<<<<< HEAD
   border-bottom: 2px solid #23395b;
   height: 10vh;
   padding-top: 3%;
-=======
-  border-bottom: 2px solid #23395B;
-  height: 15vh;
-  /* padding-top: 3%; */
->>>>>>> c190a2f829abdfffa04951b19667a0dc6caa71c6
 }
 
 h1 {
@@ -157,7 +151,6 @@ input:checked + .toggleSlider {
   position: relative;
 }
 
-<<<<<<< HEAD
 .start {
   background-color: #78cad2;
   color: #23395b;
@@ -175,37 +168,6 @@ input:checked + .toggleSlider {
   font-size: 1.5rem;
   border-radius: 15px;
   box-shadow: 1px 4px 10px #23395b;
-=======
-button {
-  box-shadow: 3px 3px 1px #23395B;
-  background-color: #78CAD2;
-  color: #23395B;
-  margin: 20px auto;
-  transition-duration: 0.5s;
-  transition-property: transform;
-}
-
-button:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-button:focus {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.start {
-  padding: 25px;
-  font-size: 2rem;
-  border-radius: 20px;
-}
-
-.reset {
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 15px;
->>>>>>> c190a2f829abdfffa04951b19667a0dc6caa71c6
 }
 
 .instructions {
@@ -237,12 +199,7 @@ textarea {
 }
 
 h2.promptLabel {
-<<<<<<< HEAD
   margin-bottom: 0;
-=======
-  margin: 0 auto;
-  border-bottom: 2.5px solid #78CAD2;
->>>>>>> c190a2f829abdfffa04951b19667a0dc6caa71c6
   font-weight: 900;
   text-decoration-line: underline;
   /* border-bottom: 2.5px solid #78CAD2; */
@@ -311,7 +268,6 @@ footer a:hover {
   text-decoration: underline dotted #78CAD2;
 }
 
-<<<<<<< HEAD
 /* Media Queries */
 
 /* Portrait tablet and small desktops */
@@ -353,11 +309,3 @@ footer a:hover {
     font-size: 1rem;
   }
 }
-=======
-footer a:focus {
-  text-shadow: 0 0 1rem #78CAD2;
-  text-decoration: underline dotted #78CAD2;
-}
-
-
->>>>>>> c190a2f829abdfffa04951b19667a0dc6caa71c6

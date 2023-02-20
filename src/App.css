@@ -45,6 +45,10 @@ h1 {
   border-bottom: 2px solid #EAE5E9;
 }
 
+.dark button {
+  box-shadow: 3px 3px 1px #18263d;
+}
+
 /* Toggle switch styling */
 .toggleContainer {
   position: absolute;
@@ -66,6 +70,7 @@ img {
   left: 0;
   height: 100%;
   width: 100%;
+  cursor: pointer;
 }
 
 .toggleCheckbox {
@@ -136,24 +141,35 @@ position: relative;
   position: relative;
 }
 
-.start {
+button {
+  box-shadow: 3px 3px 1px #23395B;
   background-color: #78CAD2;
   color: #23395B;
+  margin: 20px auto;
+  transition-duration: 0.5s;
+  transition-property: transform;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+button:focus {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.start {
   padding: 25px;
   font-size: 2rem;
   border-radius: 20px;
-  margin: 20px auto;
-  box-shadow: 5px 4px 1px #23395B;
 }
 
 .reset {
-  background-color: #78CAD2;
-  color: #23395B;
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 15px;
-  box-shadow: 1px 4px 10px #23395B;
-  margin: 20px auto;
 }
 
 .instructions {
@@ -241,4 +257,14 @@ a{
 
 h3 {
   margin-top: 0;
+}
+
+footer a:hover {
+  text-shadow: 0 0 1rem #78CAD2;
+  text-decoration: underline dotted #78CAD2;
+}
+
+footer a:focus {
+  text-shadow: 0 0 1rem #78CAD2;
+  text-decoration: underline dotted #78CAD2;
 }

@@ -313,3 +313,17 @@ footer a:hover {
     font-size: 1rem;
   }
 }
+
+.sixtySecondWarning{
+  animation: Timer-fade infinite 1s linear;
+}
+
+@keyframes Timer-fade{
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+

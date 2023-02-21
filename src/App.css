@@ -380,14 +380,14 @@ footer a:focus {
 
 }
 
-@media (max-width: 700px) and (orientation: landscape) {
+@media (max-width: 1000px) and (orientation: landscape) {
 
   .wrapper {
     padding-bottom: 10px;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   h2 {

@@ -84,6 +84,7 @@ img {
 .toggleCheckbox {
   position: absolute;
   opacity: 0;
+
 }
 
 .toggleSlot {
@@ -94,6 +95,15 @@ img {
   border: 3px solid black;
   border-radius: 10em;
   filter: drop-shadow(0 0 0.2rem #78CAD2);
+}
+
+.toggleSlot:hover {
+  filter: drop-shadow(0 0 0.2rem #FFFFFF);
+}
+
+input:focus+.toggleSlider {
+  outline: 2px solid #FFFFFF;
+  filter: drop-shadow(0 0 0.2rem #FFFFFF);
 }
 
 .toggleSlider {
@@ -150,23 +160,35 @@ input:checked + .toggleSlider {
   position: relative;
 }
 
+button {
+  box-shadow: 3px 3px 1px #23395B;
+  background-color: #78CAD2;
+  color: #23395B;
+  margin: 20px auto;
+  transition-duration: 0.5s;
+  transition-property: transform;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+button:focus {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .start {
-  background-color: #78cad2;
-  color: #23395b;
   padding: 25px;
   font-size: 2rem;
   border-radius: 20px;
-  margin: 20px auto;
-  box-shadow: 5px 4px 1px #23395b;
 }
 
 .reset {
-  background-color: #78cad2;
-  color: #23395b;
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 15px;
-  box-shadow: 1px 4px 10px #23395b;
 }
 
 .instructions {
@@ -273,6 +295,11 @@ h3 {
 }
 
 footer a:hover {
+  text-shadow: 0 0 1rem #78CAD2;
+  text-decoration: underline dotted #78CAD2;
+}
+
+footer a:focus {
   text-shadow: 0 0 1rem #78CAD2;
   text-decoration: underline dotted #78CAD2;
 }

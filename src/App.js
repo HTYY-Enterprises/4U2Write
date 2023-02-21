@@ -43,7 +43,8 @@ function App() {
               5: '5',
               10: '10',
               20: '20',
-              30: '30'
+              30: '30',
+              custom: 'custom'
           },
           inputPlaceholder: 'How many minutes?',
           inputValidator: (value) => {
@@ -57,8 +58,29 @@ function App() {
           },
           allowOutsideClick: false
       }).then((result) => {
+        if (result.value === `custom`) {
+          Swal.fire({
+            title: 'How many minutes would you like to write for?',
+            input: 'text',
+            inputLabel: 'Number of minutes:',
+            showCancelButton: false,
+            allowOutsideClick: false,
+            inputValidator: (value) => {
+              if (!value) {
+                return 'You need to write something!'
+              } else if (isNaN(value)) {
+                return 'You need to write a number!'
+              }
+            }
+          }).then((result) => {
+              Swal.fire(`You have chosen: ${result.value} minutes!`)
+              setTimer(Number(result.value) * 60);
+          })
+        } else {
           Swal.fire(`You have selected: ${result.value} minutes!`)
           setTimer(Number(result.value) * 60);
+          
+        }
       })
   }
 
@@ -104,8 +126,45 @@ function App() {
             chooseTimer()
             addPrompt(result.value)
           } else {
-            getPrompt("Woops!  You didn't add a prompt!")
-          }
+            const noPrompt = Swal.mixin({
+              customClass: {
+                  cancelButton: 'btn btn-danger',
+                  confirmButton: 'btn btn-success',
+              },
+              buttonsStyling: true
+            })
+            noPrompt.fire({
+              title: "Oops!  Didn't add a prompt!",
+              text: "Want to try again?",
+              icon: "question",
+              showCancelButton: true,
+              confirmButtonText: "Sure thing",
+              cancelButtonText: "Nah, changed my mind",
+              reverseButtons: false,
+              allowOutsideClick: false
+            }).then( (result) => {
+              if (result.isConfirmed) {
+                setNewPrompt();
+              } else {
+                noPrompt.fire({
+                  title: "No problem!",
+                  text: "Want to use one of ours?",
+                  icon: "question",
+                  showCancelButton: true,
+                  confirmButtonText: "Yes I do!",
+                  cancelButtonText: "Nah, I'm good",
+                  reverseButtons: false,
+                  allowOutsideClick: false
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    getPrompt("Wonderful! A prompt shall be provided :)")
+                  } else {
+                    chooseTimer();
+                  }
+                })
+            }
+          })
+        }
       })  
   }
 
@@ -134,15 +193,13 @@ function App() {
   
       getStarted.fire({
           title: 'Welcome to your writing room!',
-          text: "Want to use a writing prompt?",
+          text: "4U2Write is here to give you a quiet and focused workspace for all your writing needs!  We find that using a writing prompt can jumpstart your process and get you started on the right foot - would you like one?",
           icon: 'question',
           showCancelButton: true,
           confirmButtonText: `Definitely!`,
           cancelButtonText: `Nah, I'm good!`,
           reverseButtons: false,
-          allowOutsideClick: false
-          
-
+          allowOutsideClick: false          
       }).then( (result) => {
           if (result.isConfirmed) {
               const promptChoice = Swal.mixin({

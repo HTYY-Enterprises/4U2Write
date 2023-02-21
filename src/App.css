@@ -135,6 +135,10 @@ input:checked + .toggleSlider {
   background-color: #23395b !important;
 }
 
+.swal2-validation-message {
+  background-color: #eae5e9;
+}
+
 /* Starting page stying */
 .app {
   position: relative;
@@ -170,6 +174,7 @@ input:checked + .toggleSlider {
 }
 
 .instructions {
+  font-size: 1.25rem;
   text-align: center;
 }
 
@@ -282,6 +287,7 @@ footer a:hover {
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
   .instructions {
+    font-size: 1rem;
     width: 50%;
   }
   .start {
@@ -329,7 +335,8 @@ footer a:hover {
   }
 
   .instructions {
-    width: 100%;
+    font-size: 1rem;
+    width: 90%;
   }
 
   .start {
@@ -344,4 +351,48 @@ footer a:hover {
     font-size: 0.75rem;
   }
 
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+
+  .wrapper {
+    padding-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+  }
+
+  .toggleContainer img {
+    height: 30px;
+  }
+
+  textarea {
+    font-size: 1rem;
+  }
+
+  .instructions {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .start {
+    font-size: 1.25rem;
+  }
+
+  .reset {
+    font-size: 1rem;
+  }
+
+  footer {
+  position: relative;
+  }
+
+  .footerTitle h2 {
+    font-size: 0.75rem;
+  }
 }

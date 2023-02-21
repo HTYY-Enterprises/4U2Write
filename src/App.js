@@ -202,7 +202,7 @@ function App() {
           <img src={sun} alt="sun" />
           <div className='toggleSlot'>
             <label htmlFor="themeToggle" className='label'>
-              <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme}></input>
+              <input type="checkbox" name="themeToggle" id="themeToggle" className="toggleCheckbox" onChange={toggleTheme} aria-label="toggle for light-dark mode"></input>
               <div className='toggleSlider'></div>
             </label>
           </div>

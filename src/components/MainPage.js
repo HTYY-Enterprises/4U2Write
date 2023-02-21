@@ -78,7 +78,7 @@ function MainPage(props) {
     <div>
       <h2 className="timer">
         Time's ticking!{" "}
-        <span className={timer < 60 ? "sixtySecondWarning" : "timerText"}>
+        <span className={timer < 60 && counter!=0 && timer!=0? "sixtySecondWarning" : "timerText"}>
           {convertedTime}
         </span>
       </h2>

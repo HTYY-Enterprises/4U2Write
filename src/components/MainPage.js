@@ -29,6 +29,7 @@ function MainPage(props) {
         } else if (timer===0) {
           // alert for when time is up
           // inactivity and main timer no longer count down
+          convertTime(timer)
           Swal.fire({
             title: `Time's up!`,
             icon: 'success',
@@ -43,6 +44,7 @@ function MainPage(props) {
           // main timer: counts down by 1 second
           setTimeout(() => setTimer(timer - 1), 1000)
         } else {
+          convertTime(timer)
           // test alert for when counter reaches 0
           Swal.fire({
             title: `Don't stop now!`,
@@ -77,7 +79,7 @@ function MainPage(props) {
     <div>
       <h2 className="timer">
         Time's ticking!{" "}
-        <span className={timer < 60 ? "sixtySecondWarning" : "timerText"}>
+        <span className={timer < 60 && counter!=0 && timer!=0? "sixtySecondWarning" : "timerText"}>
           {convertedTime}
         </span>
       </h2>

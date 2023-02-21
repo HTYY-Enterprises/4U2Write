@@ -81,7 +81,7 @@ function MainPage(props) {
         </span>
       </h2>
       <div className="main">
-        <h2 className="promptLabel">Prompt:</h2>
+        <h2 className="promptLabel">{prompt ? "Prompt:" : null}</h2>
         <h2>{prompt}</h2>
         <h2>Write your story below...</h2>
         <textarea
